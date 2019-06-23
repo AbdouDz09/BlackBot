@@ -27,10 +27,7 @@ const antihack = JSON.parse(fs.readFileSync('./antihack.json' , 'utf8')) || {}
 const antijoin = JSON.parse(fs.readFileSync('./antijoin.json' , 'utf8')) || {}
 const child_process = require('child_process')
 const config = require('../config/config.json')
-const prefix = config.prefix;
-
-
-const Token = config.token;
+var prefix = "+"
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -8691,4 +8688,4 @@ if (err) console.error(err);
 return console.log(arguments[0])
 });
  
-client.login(Token)
+client.login(process.env.BOT_TOKEN);
